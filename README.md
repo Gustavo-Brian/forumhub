@@ -15,7 +15,6 @@ API REST para um fórum de tópicos no estilo Alura, construída em **Spring Boo
 - MySQL
 - Flyway (migrations)
 - Lombok (opcional)
-- JUnit 5 (testes)
 
 ---
 
