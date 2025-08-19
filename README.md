@@ -8,10 +8,10 @@ API REST para um fórum de tópicos no estilo Alura, construída em **Spring Boo
 
 - Java 17+ (ou 21, se preferir)
 - Spring Boot 3.1.4
-  - Spring Web
-  - Spring Data JPA
-  - Spring Security + JWT
-  - Bean Validation
+- Spring Web
+- Spring Data JPA
+- Spring Security + JWT
+- Bean Validation
 - MySQL
 - Flyway (migrations)
 - Lombok (opcional)
