@@ -50,5 +50,21 @@ Crie um banco de dados chamado `forumhub`:
   ```bash
   mvn spring-boot:run
   ```
+## Endpoints
 
+### 🔹 Autenticação
 
+#### Registrar usuário
+**POST** `/auth/register`  
+**Body de exemplo:**
+
+  ```json
+  {
+    "nome": "João Silva",
+    "email": "joao@email.com",
+    "senha": "123456"
+  }
+  ```
+Retorna: 201 Created
+
+Sem token necessário
