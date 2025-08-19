@@ -52,9 +52,9 @@ Crie um banco de dados chamado `forumhub`:
   ```
 ## Endpoints
 
-### 🔹 Autenticação
+## 🔹 Autenticação
 
-#### Registrar usuário
+### Registrar usuário
 **POST** `/auth/register`  
 **Body de exemplo:**
 
@@ -68,3 +68,64 @@ Crie um banco de dados chamado `forumhub`:
 Retorna: 201 Created
 
 Sem token necessário
+
+### Login
+**POST** `/auth/login`  
+**Body de exemplo:**
+
+  ```json
+  {
+    "email": "joao@email.com",
+    "senha": "123456"
+  }
+  ```
+Retorna: 200 OK + JWT
+
+Sem token necessário
+
+## 🔹 Tópicos
+
+### Listar todos
+**GET** `/topicos`  
+- Parâmetros opcionais: `page`, `size`, `curso`  
+- Retorna: lista paginada de tópicos
+
+### Buscar por ID
+**GET** `/topicos/{id}`  
+- Retorna: `200 OK` ou `404 Not Found`
+
+### Criar tópico
+**POST** `/topicos`  
+**Header:** `Authorization: Bearer <token>`  
+**Body de exemplo:**
+
+  ```json
+  {
+    "titulo": "Problema com JPA",
+    "mensagem": "Não consigo mapear entidade",
+    "nomeCurso": "Spring Boot"
+  }
+  ```
+Retorna: 201 Created + Location
+
+### Atualizar tópico
+**PUT** `/topicos/{id}`  
+**Header:** `Authorization: Bearer <token>`  
+**Body de exemplo:** (titulo e/ou mensagem)
+
+  ```json
+  {
+    "titulo": "Problema resolvido",
+    "mensagem": "Usei CascadeType.ALL"
+  }
+  ```
+Retorna: 200 OK
+
+Só o autor pode atualizar
+
+### Excluir tópico
+**DELETE** `/topicos/{id}`  
+**Header:** `Authorization: Bearer <token>`  
+
+- Retorna: `204 No Content`  
+- Só o autor pode deletar
