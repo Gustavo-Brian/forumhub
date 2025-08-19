@@ -45,7 +45,7 @@ Crie um banco de dados chamado `forumhub`:
   security.jwt.secret=MinhaChaveSecretaSuperSegura1234567890
   security.jwt.expiration=86400000
   ```
-### 4. Execute a aplicação com o seguinte comando, estando no diretório que contem o pom.xml
+### 4. Execute a aplicação com o seguinte comando, estando no diretório que contém o pom.xml
 
   ```bash
   mvn spring-boot:run
