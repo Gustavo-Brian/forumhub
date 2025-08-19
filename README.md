@@ -20,20 +20,20 @@ API REST para um fórum de tópicos no estilo Alura, construída em **Spring Boo
 
 ## 🚀 Como rodar o projeto
 
-## 1. Clonar o repositório
+### 1. Clonar o repositório
 
   ```bash
   git clone https://github.com/seu-usuario/forumhub.git
   cd forumhub
   ```
-## 2. Configurar o MySQL
+### 2. Configurar o MySQL
 
 Crie um banco de dados chamado `forumhub`:
 
   ```sql
   CREATE DATABASE forumhub;
   ```
-## 3. No arquivo `src/main/resources/application.properties`, configure suas credenciais:
+### 3. No arquivo `src/main/resources/application.properties`, configure suas credenciais:
 
   ```properties
   spring.datasource.url=jdbc:mysql://localhost:3306/forumhub
@@ -44,6 +44,11 @@ Crie um banco de dados chamado `forumhub`:
   
   security.jwt.secret=MinhaChaveSecretaSuperSegura1234567890
   security.jwt.expiration=86400000
+  ```
+### 4. Execute a aplicação com o seguinte comando, estando no diretório que contem o pom.xml
+
+  ```bash
+  mvn spring-boot:run
   ```
 
 
