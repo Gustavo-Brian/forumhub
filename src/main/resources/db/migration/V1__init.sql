@@ -1,0 +1,22 @@
+CREATE TABLE usuarios (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE cursos (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE topicos (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  titulo VARCHAR(100) NOT NULL,
+  mensagem VARCHAR(500) NOT NULL,
+  data_criacao DATETIME NOT NULL,
+  curso_id BIGINT NOT NULL,
+  autor_id BIGINT NOT NULL,
+  CONSTRAINT fk_topico_curso FOREIGN KEY (curso_id) REFERENCES cursos(id),
+  CONSTRAINT fk_topico_autor FOREIGN KEY (autor_id) REFERENCES usuarios(id)
+);
